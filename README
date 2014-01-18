@@ -1,0 +1,35 @@
+Created by Charles Smith
+@ Innovative Weather and the University of Wisconsin-Milwaukee
+
+Purpose:  These scripts are mostly of education purpose, but could be modified to one's own needs
+Also to showcase my abilities in gempak and csh.
+
+radgen.csh >  Create N0Q, N0R, N1P, NTP images for the set of sites described in the script.
+satgen.csh > Create VIS-IR of certain areas of interest
+radgenregions.csh >  Create a radar composite of areas of interest.
+surfaceplotgen.csh > Create surface plots based off of metar observations and some plots which feature one variable.
+
+Each script will have a more detailed description about what it does.
+
+Installation:
+If you plan to use these scripts, you will need to modify a few lines.
+
+First the output directory in some scripts is defined by $DIRECTORY and will need to be changed.
+It would also be prudent to search for any "/atmo/web" strings and change or remove these.
+
+Also,  some scripts output by GF(Graphics FIle) instead of a GIF Image.  Depending on your GEMPAK installation,  you may need to change these
+the DEVICE output from...
+
+GF|imagename.gif|800;600
+to...
+GIF|imagename.gif|800;600
+
+and remove the lines
+
+Xvfb :2 -screen 0 1280x1024x24 &
+setenv DISPLAY atmo.math.uwm.edu:2.0
+
+at the top of the script.
+
+Charles Smith
+Email: on github homepage.
